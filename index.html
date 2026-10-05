@@ -1,26 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UniPass — Technological Institute of the Philippines (T.I.P.)</title>
-  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>UniPass Prototype</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..800;1,9..40,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --tip-dark:       #121824;
-      --tip-dark-card:  #1e2229;
-      --tip-gold:       #F5B800;
-      --tip-gold-hover: #E5A900;
-      --tip-bg:         #F4F6F8;
-      --tip-card:       #FFFFFF;
+      --up-dark:       #121824;
+      --up-dark-card:  #1e2229;
+      --up-gold:       #F5B800;
+      --up-gold-hover: #E5A900;
+      --up-bg:         #F4F6F8;
+      --up-card:       #FFFFFF;
     }
     body {
       font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--tip-bg);
-      color: var(--tip-dark);
+      background-color: var(--up-bg);
+      color: var(--up-dark);
       margin: 0;
       padding: 0;
       -webkit-font-smoothing: antialiased;
@@ -28,37 +24,37 @@
     .font-display { font-family: 'Manrope', sans-serif; }
     .font-mono { font-family: 'IBM Plex Mono', monospace; }
 
-    /* Custom T.I.P. Badges */
+    /* Custom Demo University Badges */
     .badge-allowed { background: #E6F7ED; color: #0E6237; border: 1px solid #B8E8CD; }
     .badge-denied  { background: #FDECEC; color: #9A1C1C; border: 1px solid #F8B4B4; }
     .badge-pending { background: #FEF6E7; color: #925400; border: 1px solid #FBDCA4; }
     .badge-neutral { background: #EDF0F3; color: #4B5563; border: 1px solid #D1D5DB; }
 
-    /* T.I.P. Buttons */
-    .btn-tip-gold {
-      background-color: var(--tip-gold);
-      color: var(--tip-dark);
+    /* Demo University Buttons */
+    .btn-up-gold {
+      background-color: var(--up-gold);
+      color: var(--up-dark);
       font-weight: 700;
       transition: all 0.15s ease-in-out;
     }
-    .btn-tip-gold:hover {
-      background-color: var(--tip-gold-hover);
+    .btn-up-gold:hover {
+      background-color: var(--up-gold-hover);
       transform: translateY(-1px);
     }
-    .btn-tip-dark {
-      background-color: var(--tip-dark);
+    .btn-up-dark {
+      background-color: var(--up-dark);
       color: #FFFFFF;
       font-weight: 600;
       transition: all 0.15s ease-in-out;
     }
-    .btn-tip-dark:hover {
+    .btn-up-dark:hover {
       background-color: #222d42;
     }
 
     /* Active Nav link */
     .nav-item.active {
-      background-color: var(--tip-gold);
-      color: var(--tip-dark);
+      background-color: var(--up-gold);
+      color: var(--up-dark);
       font-weight: 700;
     }
     .nav-item:not(.active):hover {
@@ -75,9 +71,9 @@
     .marker-pulse {
       animation: pulse-ring 2.5s infinite ease-in-out;
     }
+      .shadow-xs{box-shadow:0 1px 2px rgba(0,0,0,.05)} .shadow-2xs{box-shadow:0 1px 1px rgba(0,0,0,.05)}
   </style>
-</head>
-<body class="min-h-screen flex flex-col md:flex-row antialiased">
+<div id="app-root" class="min-h-screen flex flex-col md:flex-row antialiased">
 
   <!-- ================= SIDEBAR ================= -->
   <aside class="w-full md:w-64 bg-[#121824] text-white flex flex-col justify-between shrink-0 min-h-screen border-r border-[#222c3c]">
@@ -92,7 +88,7 @@
             <span class="font-display font-extrabold text-lg tracking-tight text-white">UniPass</span>
             <span class="text-[10px] bg-[#F5B800]/20 text-[#F5B800] px-1.5 py-0.5 rounded font-mono font-bold">v2.0</span>
           </div>
-          <p class="text-[11px] text-gray-400 font-medium leading-none mt-0.5">T.I.P. Campus Access</p>
+          <p class="text-[11px] text-gray-400 font-medium leading-none mt-0.5">Demo University Access</p>
         </div>
       </div>
 
@@ -170,7 +166,7 @@
         <span class="font-mono text-[10px] text-gray-400">PG16</span>
       </div>
       <div class="mt-2 text-[11px] text-gray-400 flex items-center justify-between">
-        <span>T.I.P. Security Ops</span>
+        <span>Demo Security Ops</span>
         <span class="text-[#F5B800] font-mono">Asia/Manila</span>
       </div>
     </div>
@@ -178,13 +174,14 @@
 
   <!-- ================= MAIN CONTENT ================= -->
   <main class="flex-1 flex flex-col min-w-0 bg-[#F4F6F8]">
+    <div class="bg-[#0d121c] text-[#F5B800] text-[11px] font-bold px-6 py-1.5 flex items-center gap-2 flex-wrap"><span class="uppercase tracking-wider">Prototype</span><span class="text-gray-300 font-medium">Sample data only. Not connected to any real campus, person or device.</span></div>
     <!-- Top Global Header -->
-    <header class="h-20 bg-white border-b border-[#e3e7eb] px-6 flex items-center justify-between gap-4 sticky top-0 z-30 shadow-xs">
+    <header class="min-h-20 py-3 flex-wrap bg-white border-b border-[#e3e7eb] px-6 flex items-center justify-between gap-4 sticky z-30 shadow-xs" style="top: env(safe-area-inset-top, 0px)">
       <div class="flex items-center gap-4">
         <div>
           <h1 class="font-display font-extrabold text-lg text-[#121824] leading-tight flex items-center gap-2">
-            Technological Institute of the Philippines
-            <span class="text-xs bg-[#121824] text-[#F5B800] px-2 py-0.5 rounded-full font-bold">T.I.P.</span>
+            Demo University
+            <span class="text-xs bg-[#121824] text-[#F5B800] px-2 py-0.5 rounded-full font-bold">DEMO</span>
           </h1>
           <p class="text-xs text-gray-500 font-medium">Smart Campus Access & Threat Intelligence</p>
         </div>
@@ -204,9 +201,9 @@
             <svg class="w-3.5 h-3.5 text-[#121824]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
           </div>
           <select id="campus-selector" onchange="onCampusChange(this.value)" class="bg-transparent text-xs font-bold text-[#121824] pr-2 py-1 focus:outline-none cursor-pointer">
-            <option value="ALL">All campuses (QC & Manila)</option>
-            <option value="QC">T.I.P. Quezon City</option>
-            <option value="MNL">T.I.P. Manila</option>
+            <option value="ALL">All campuses (North & South)</option>
+            <option value="QC">Demo University North</option>
+            <option value="MNL">Demo University South</option>
           </select>
         </div>
 
@@ -254,7 +251,7 @@
               <svg class="w-3.5 h-3.5 text-[#F5B800]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
               Simulate Device Heartbeat
             </button>
-            <button onclick="switchTab('scan')" class="btn-tip-gold px-4 py-2 rounded-lg text-xs flex items-center gap-1.5 shadow-2xs">
+            <button onclick="switchTab('scan')" class="btn-up-gold px-4 py-2 rounded-lg text-xs flex items-center gap-1.5 shadow-2xs">
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"/></svg>
               Open Scan & Verify
             </button>
@@ -307,7 +304,7 @@
               <span class="text-xs text-amber-600 font-semibold">1 requires check</span>
             </div>
             <div class="mt-2 text-[11px] text-gray-400">
-              QC: 4 gates | Manila: 3 gates
+              North: 4 gates | South: 3 gates
             </div>
           </div>
 
@@ -482,7 +479,7 @@
           </div>
           <div class="flex items-center gap-2">
             <span class="text-xs text-gray-500 font-semibold">Active Gate Device:</span>
-            <span class="font-mono text-xs bg-white border border-gray-200 px-2.5 py-1 rounded-md font-bold text-[#121824]">GATE-01-QC-TURNSTILE</span>
+            <span class="font-mono text-xs bg-white border border-gray-200 px-2.5 py-1 rounded-md font-bold text-[#121824]">GATE-01-N-TURNSTILE</span>
           </div>
         </div>
 
@@ -530,11 +527,11 @@
 
             <!-- Action buttons -->
             <div class="flex items-center gap-3 pt-2">
-              <button onclick="processScan('MANUAL_CODE')" class="btn-tip-gold flex-1 py-3 rounded-xl text-sm shadow-xs flex items-center justify-center gap-2">
+              <button onclick="processScan('MANUAL_CODE')" class="btn-up-gold flex-1 py-3 rounded-xl text-sm shadow-xs flex items-center justify-center gap-2">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 Verify & Record Scan
               </button>
-              <button onclick="simulateCameraScan()" class="btn-tip-dark px-4 py-3 rounded-xl text-sm shadow-xs flex items-center gap-2">
+              <button onclick="simulateCameraScan()" class="btn-up-dark px-4 py-3 rounded-xl text-sm shadow-xs flex items-center gap-2">
                 <svg class="w-4 h-4 text-[#F5B800]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                 Simulate Camera QR
               </button>
@@ -590,7 +587,7 @@
                   </div>
                   <div class="flex items-center justify-between text-xs">
                     <span class="text-gray-500">Allowed Campus:</span>
-                    <span id="cardholder-campus" class="font-semibold text-gray-700">T.I.P. Quezon City</span>
+                    <span id="cardholder-campus" class="font-semibold text-gray-700">Demo University North</span>
                   </div>
                   <div class="flex items-center justify-between text-xs">
                     <span class="text-gray-500">Direction & Gate:</span>
@@ -620,7 +617,7 @@
             <h2 class="text-2xl font-display font-extrabold text-[#121824] mt-1">Interactive Gate Map & Device Health</h2>
             <p class="text-xs text-gray-500">Real-time gate traffic from <code class="font-mono text-[#121824]">v_gate_traffic_15m</code> and health from <code class="font-mono text-[#121824]">v_device_health</code></p>
           </div>
-          <button onclick="simulateHeartbeat()" class="btn-tip-gold px-3.5 py-2 rounded-lg text-xs flex items-center gap-1.5 shadow-2xs">
+          <button onclick="simulateHeartbeat()" class="btn-up-gold px-3.5 py-2 rounded-lg text-xs flex items-center gap-1.5 shadow-2xs">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
             Send Heartbeat to All Devices
           </button>
@@ -647,7 +644,7 @@
 
             <!-- Campus Building Blocks Mock -->
             <div class="absolute top-12 left-16 w-48 h-28 bg-[#1f2838] border border-[#2e3b52] rounded-lg p-2 flex flex-col justify-between">
-              <span class="text-[10px] font-bold text-gray-400 uppercase">Main Academic Bldg (Arlegui)</span>
+              <span class="text-[10px] font-bold text-gray-400 uppercase">Main Academic Building</span>
               <span class="text-[10px] text-gray-400 font-mono">Zones A1-A4</span>
             </div>
             <div class="absolute top-12 right-20 w-44 h-40 bg-[#1f2838] border border-[#2e3b52] rounded-lg p-2 flex flex-col justify-between">
@@ -728,36 +725,36 @@
               </thead>
               <tbody class="divide-y divide-gray-100 font-medium">
                 <tr class="hover:bg-gray-50/80">
-                  <td class="px-5 py-3 font-mono font-bold text-[#121824]">DEV-QC-G1-01</td>
+                  <td class="px-5 py-3 font-mono font-bold text-[#121824]">DEV-N-G1-01</td>
                   <td class="px-4 py-3">Gate 1 Main Pedestrian Turnstile</td>
-                  <td class="px-4 py-3 font-semibold text-gray-700">T.I.P. Quezon City</td>
+                  <td class="px-4 py-3 font-semibold text-gray-700">Demo University North</td>
                   <td class="px-4 py-3"><span class="badge-allowed px-2 py-0.5 rounded-full font-bold">ONLINE</span></td>
                   <td class="px-4 py-3 font-mono font-bold">142 scans</td>
                   <td class="px-4 py-3 text-gray-400 font-mono">12s ago</td>
                   <td class="px-5 py-3 text-right"><button onclick="simulateHeartbeat()" class="text-[#121824] hover:text-[#F5B800] font-bold">Ping</button></td>
                 </tr>
                 <tr class="hover:bg-gray-50/80">
-                  <td class="px-5 py-3 font-mono font-bold text-[#121824]">DEV-QC-G2-01</td>
+                  <td class="px-5 py-3 font-mono font-bold text-[#121824]">DEV-N-G2-01</td>
                   <td class="px-4 py-3">Gate 2 Tech Complex Turnstile</td>
-                  <td class="px-4 py-3 font-semibold text-gray-700">T.I.P. Quezon City</td>
+                  <td class="px-4 py-3 font-semibold text-gray-700">Demo University North</td>
                   <td class="px-4 py-3"><span class="badge-allowed px-2 py-0.5 rounded-full font-bold">ONLINE</span></td>
                   <td class="px-4 py-3 font-mono font-bold">88 scans</td>
                   <td class="px-4 py-3 text-gray-400 font-mono">45s ago</td>
                   <td class="px-5 py-3 text-right"><button onclick="simulateHeartbeat()" class="text-[#121824] hover:text-[#F5B800] font-bold">Ping</button></td>
                 </tr>
                 <tr class="hover:bg-amber-50/50 bg-amber-50/20">
-                  <td class="px-5 py-3 font-mono font-bold text-[#121824]">DEV-QC-G3-01</td>
+                  <td class="px-5 py-3 font-mono font-bold text-[#121824]">DEV-N-G3-01</td>
                   <td class="px-4 py-3">Gate 3 Service & Maintenance Exit</td>
-                  <td class="px-4 py-3 font-semibold text-gray-700">T.I.P. Quezon City</td>
+                  <td class="px-4 py-3 font-semibold text-gray-700">Demo University North</td>
                   <td class="px-4 py-3" id="g3-table-badge"><span class="badge-pending px-2 py-0.5 rounded-full font-bold">STALE (6m)</span></td>
                   <td class="px-4 py-3 font-mono font-bold">14 scans</td>
                   <td class="px-4 py-3 text-amber-700 font-mono" id="g3-time">6m 12s ago</td>
-                  <td class="px-5 py-3 text-right"><button onclick="simulateHeartbeat()" class="btn-tip-gold px-2 py-1 rounded text-[11px]">Heartbeat</button></td>
+                  <td class="px-5 py-3 text-right"><button onclick="simulateHeartbeat()" class="btn-up-gold px-2 py-1 rounded text-[11px]">Heartbeat</button></td>
                 </tr>
                 <tr class="hover:bg-gray-50/80">
-                  <td class="px-5 py-3 font-mono font-bold text-[#121824]">DEV-MNL-G1-01</td>
-                  <td class="px-4 py-3">Casal St. Turnstile 1</td>
-                  <td class="px-4 py-3 font-semibold text-gray-700">T.I.P. Manila</td>
+                  <td class="px-5 py-3 font-mono font-bold text-[#121824]">DEV-S-G1-01</td>
+                  <td class="px-4 py-3">South Entrance Turnstile 1</td>
+                  <td class="px-4 py-3 font-semibold text-gray-700">Demo University South</td>
                   <td class="px-4 py-3"><span class="badge-allowed px-2 py-0.5 rounded-full font-bold">ONLINE</span></td>
                   <td class="px-4 py-3 font-mono font-bold">115 scans</td>
                   <td class="px-4 py-3 text-gray-400 font-mono">20s ago</td>
@@ -780,7 +777,7 @@
             <h2 class="text-2xl font-display font-extrabold text-[#121824] mt-1">People & Cards Management</h2>
             <p class="text-xs text-gray-500">Students, faculty, and staff records with bulk actions and transaction operator auditing</p>
           </div>
-          <button class="btn-tip-gold px-4 py-2 rounded-lg text-xs font-bold flex items-center gap-1.5 shadow-2xs">
+          <button class="btn-up-gold px-4 py-2 rounded-lg text-xs font-bold flex items-center gap-1.5 shadow-2xs">
             + Issue New Card
           </button>
         </div>
@@ -799,7 +796,7 @@
             <button onclick="bulkApplyStatus('SUSPENDED')" class="px-2.5 py-1.5 bg-red-800/80 hover:bg-red-700 text-white rounded text-xs font-bold">
               Suspend Access
             </button>
-            <button onclick="bulkValidateCards()" class="btn-tip-gold px-2.5 py-1.5 rounded text-xs">
+            <button onclick="bulkValidateCards()" class="btn-up-gold px-2.5 py-1.5 rounded text-xs">
               Validate Semester Cards
             </button>
             <button onclick="deselectAllPeople()" class="text-gray-400 hover:text-white text-xs px-2 py-1">
@@ -835,7 +832,7 @@
                   </td>
                   <td class="px-4 py-3 font-mono font-bold text-[#121824]">UNIPASS-2026-89412</td>
                   <td class="px-4 py-3"><span class="bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-semibold text-[11px]">STUDENT</span></td>
-                  <td class="px-4 py-3 font-semibold text-gray-700">T.I.P. Quezon City</td>
+                  <td class="px-4 py-3 font-semibold text-gray-700">Demo University North</td>
                   <td class="px-4 py-3"><span class="badge-allowed px-2 py-0.5 rounded-full font-bold">ACTIVE</span></td>
                   <td class="px-4 py-3 text-gray-600 font-mono">Until 2026-10-31</td>
                   <td class="px-4 py-3 text-right"><button class="text-xs text-[#121824] hover:text-[#F5B800] font-bold">Details</button></td>
@@ -848,7 +845,7 @@
                   </td>
                   <td class="px-4 py-3 font-mono font-bold text-[#121824]">UNIPASS-2026-21045</td>
                   <td class="px-4 py-3"><span class="bg-purple-50 text-purple-700 px-2 py-0.5 rounded font-semibold text-[11px]">FACULTY</span></td>
-                  <td class="px-4 py-3 font-semibold text-gray-700">T.I.P. Quezon City</td>
+                  <td class="px-4 py-3 font-semibold text-gray-700">Demo University North</td>
                   <td class="px-4 py-3"><span class="badge-allowed px-2 py-0.5 rounded-full font-bold">ACTIVE</span></td>
                   <td class="px-4 py-3 text-gray-600 font-mono">Permanent</td>
                   <td class="px-4 py-3 text-right"><button class="text-xs text-[#121824] hover:text-[#F5B800] font-bold">Details</button></td>
@@ -861,7 +858,7 @@
                   </td>
                   <td class="px-4 py-3 font-mono font-bold text-[#121824]">UNIPASS-2026-99999</td>
                   <td class="px-4 py-3"><span class="bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-semibold text-[11px]">STUDENT</span></td>
-                  <td class="px-4 py-3 font-semibold text-gray-700">T.I.P. Manila</td>
+                  <td class="px-4 py-3 font-semibold text-gray-700">Demo University South</td>
                   <td class="px-4 py-3"><span class="badge-denied px-2 py-0.5 rounded-full font-bold">SUSPENDED</span></td>
                   <td class="px-4 py-3 text-gray-400 font-mono">Withheld (OSA)</td>
                   <td class="px-4 py-3 text-right"><button class="text-xs text-[#121824] hover:text-[#F5B800] font-bold">Details</button></td>
@@ -883,12 +880,12 @@
             <h2 class="text-2xl font-display font-extrabold text-[#121824] mt-1">Visitor Passes</h2>
             <p class="text-xs text-gray-500">Issued for a specific campus (<code class="font-mono text-[#121824]">visitor_passes.campus_id</code>) using sequence <code class="font-mono text-[#121824]">UNIPASS-VIS-000001</code></p>
           </div>
-          <button class="btn-tip-gold px-4 py-2 rounded-lg text-xs font-bold shadow-2xs">
+          <button class="btn-up-gold px-4 py-2 rounded-lg text-xs font-bold shadow-2xs">
             + Issue Visitor Pass
           </button>
         </div>
 
-        <div class="bg-white rounded-2xl border border-[#e3e7eb] overflow-hidden shadow-2xs">
+        <div class="bg-white rounded-2xl border border-[#e3e7eb] overflow-x-auto shadow-2xs">
           <table class="w-full text-left text-xs">
             <thead class="bg-[#F4F6F8] text-gray-500 font-semibold border-b border-gray-200">
               <tr>
@@ -906,7 +903,7 @@
                 <td class="px-5 py-3 font-mono font-bold text-[#121824]">UNIPASS-VIS-000001</td>
                 <td class="px-4 py-3 font-bold text-gray-900">Engr. Ramon Bautista</td>
                 <td class="px-4 py-3">Accreditation Audit / Dean Office</td>
-                <td class="px-4 py-3 font-semibold text-gray-700">T.I.P. Quezon City</td>
+                <td class="px-4 py-3 font-semibold text-gray-700">Demo University North</td>
                 <td class="px-4 py-3 font-mono text-gray-600">Today 08:00 - 18:00</td>
                 <td class="px-4 py-3"><span class="badge-allowed px-2 py-0.5 rounded-full font-bold">ACTIVE</span></td>
                 <td class="px-5 py-3 text-right"><button class="text-xs font-bold text-red-700 hover:underline">Return Lanyard</button></td>
@@ -915,7 +912,7 @@
                 <td class="px-5 py-3 font-mono font-bold text-[#121824]">UNIPASS-VIS-000002</td>
                 <td class="px-4 py-3 font-bold text-gray-900">Arlene Villanueva</td>
                 <td class="px-4 py-3">Parent Inquiry / Admissions</td>
-                <td class="px-4 py-3 font-semibold text-gray-700">T.I.P. Manila</td>
+                <td class="px-4 py-3 font-semibold text-gray-700">Demo University South</td>
                 <td class="px-4 py-3 font-mono text-gray-600">Today 10:00 - 14:00</td>
                 <td class="px-4 py-3"><span class="badge-neutral px-2 py-0.5 rounded-full font-bold">RETURNED</span></td>
                 <td class="px-5 py-3 text-right"><span class="text-xs text-gray-400">Completed</span></td>
@@ -938,14 +935,14 @@
           </div>
         </div>
 
-        <div class="bg-white rounded-2xl border border-[#e3e7eb] overflow-hidden shadow-2xs">
+        <div class="bg-white rounded-2xl border border-[#e3e7eb] overflow-x-auto shadow-2xs">
           <table class="w-full text-left text-xs">
             <thead class="bg-[#F4F6F8] text-gray-500 font-semibold border-b border-gray-200">
               <tr>
                 <th class="px-5 py-3">Flag Type</th>
                 <th class="px-4 py-3">Card / Student</th>
                 <th class="px-4 py-3">Gate & Direction</th>
-                <th class="px-4 py-3">Timestamp (Manila)</th>
+                <th class="px-4 py-3">Timestamp (local)</th>
                 <th class="px-4 py-3">Anomaly Context</th>
                 <th class="px-4 py-3">Review State</th>
                 <th class="px-5 py-3 text-right">Review Action</th>
@@ -962,7 +959,7 @@
                 <td class="px-4 py-3 text-gray-700">Two consecutive IN scans within 90 seconds without leaving.</td>
                 <td class="px-4 py-3"><span class="badge-pending px-2 py-0.5 rounded-full">PENDING_REVIEW</span></td>
                 <td class="px-5 py-3 text-right">
-                  <button onclick="openReviewModal('UNIPASS-2026-89412', 'PASSBACK')" class="btn-tip-gold px-2.5 py-1 rounded text-xs font-bold">
+                  <button onclick="openReviewModal('UNIPASS-2026-89412', 'PASSBACK')" class="btn-up-gold px-2.5 py-1 rounded text-xs font-bold">
                     Add Note & Resolve
                   </button>
                 </td>
@@ -983,7 +980,7 @@
             <h2 class="text-2xl font-display font-extrabold text-[#121824] mt-1">Registrar Sync & Privacy Purge</h2>
             <p class="text-xs text-gray-500">Synced runs from <code class="font-mono text-[#121824]">sis_sync_runs</code> and statutory scan retention enforcement.</p>
           </div>
-          <button onclick="runRetentionPurge()" class="btn-tip-dark px-4 py-2 rounded-lg text-xs font-bold flex items-center gap-2 shadow-2xs">
+          <button onclick="runRetentionPurge()" class="btn-up-dark px-4 py-2 rounded-lg text-xs font-bold flex items-center gap-2 shadow-2xs">
             <svg class="w-3.5 h-3.5 text-[#F5B800]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
             Run Retention Clean-up (purge_expired_scan_logs)
           </button>
@@ -1018,6 +1015,176 @@
         </div>
       </section>
 
+      <!-- ================= TAB: SCAN ACTIVITY ================= -->
+      <section id="tab-activity" class="hidden space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <div class="text-[11px] font-bold uppercase tracking-wider text-[#8b6a00] flex items-center gap-2">
+              <span class="w-4 h-0.5 bg-[#F5B800]"></span>
+              Access Log
+            </div>
+            <h2 class="text-2xl font-display font-extrabold text-[#121824] mt-1">Scan Activity</h2>
+            <p class="text-xs text-gray-500">Latest entries from <code class="font-mono text-[#121824]">access_logs</code>, newest first. Scans from stale devices keep their original timestamp when they sync.</p>
+          </div>
+          <div class="flex items-center gap-1 p-1 bg-white rounded-xl border border-[#d9dfe5]" role="group" aria-label="Filter scans by result">
+            <button type="button" onclick="filterScans('ALL')" id="scan-filter-ALL" class="px-3 py-1.5 text-xs font-bold rounded-lg bg-[#121824] text-white">All <span class="font-mono text-[10px] opacity-70" id="scan-count-ALL">8</span></button>
+            <button type="button" onclick="filterScans('ALLOWED')" id="scan-filter-ALLOWED" class="px-3 py-1.5 text-xs font-bold rounded-lg text-gray-600 hover:text-gray-900">Allowed <span class="font-mono text-[10px] opacity-70" id="scan-count-ALLOWED">6</span></button>
+            <button type="button" onclick="filterScans('DENIED')" id="scan-filter-DENIED" class="px-3 py-1.5 text-xs font-bold rounded-lg text-gray-600 hover:text-gray-900">Denied <span class="font-mono text-[10px] opacity-70" id="scan-count-DENIED">2</span></button>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-[#e3e7eb] overflow-x-auto shadow-2xs">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-[#F4F6F8] text-gray-500 font-semibold border-b border-gray-200">
+              <tr>
+                <th class="px-5 py-3">Time</th>
+                <th class="px-4 py-3">UniPass Code</th>
+                <th class="px-4 py-3">Person Type</th>
+                <th class="px-4 py-3">Device</th>
+                <th class="px-4 py-3">Direction</th>
+                <th class="px-4 py-3">Input</th>
+                <th class="px-4 py-3">Result</th>
+                <th class="px-5 py-3">Note</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100 font-medium" id="scan-activity-body">
+              <tr data-result="ALLOWED" class="hover:bg-gray-50/80">
+                <td class="px-5 py-3 font-mono text-gray-600 whitespace-nowrap">08:12:40 AM</td>
+                <td class="px-4 py-3 font-mono font-bold text-[#121824] whitespace-nowrap">UNIPASS-2026-89412</td>
+                <td class="px-4 py-3"><span class="bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-semibold text-[11px]">STUDENT</span></td>
+                <td class="px-4 py-3 font-mono text-gray-700 whitespace-nowrap">DEV-N-G1-01</td>
+                <td class="px-4 py-3 font-mono">IN</td>
+                <td class="px-4 py-3 font-mono text-gray-600">QR_SCAN</td>
+                <td class="px-4 py-3"><span class="badge-allowed px-2 py-0.5 rounded-full font-bold">ALLOWED</span></td>
+                <td class="px-5 py-3 text-gray-400">None</td>
+              </tr>
+              <tr data-result="ALLOWED" class="hover:bg-gray-50/80">
+                <td class="px-5 py-3 font-mono text-gray-600 whitespace-nowrap">08:12:05 AM</td>
+                <td class="px-4 py-3 font-mono font-bold text-[#121824] whitespace-nowrap">UNIPASS-2026-21045</td>
+                <td class="px-4 py-3"><span class="bg-purple-50 text-purple-700 px-2 py-0.5 rounded font-semibold text-[11px]">FACULTY</span></td>
+                <td class="px-4 py-3 font-mono text-gray-700 whitespace-nowrap">DEV-N-G2-01</td>
+                <td class="px-4 py-3 font-mono">IN</td>
+                <td class="px-4 py-3 font-mono text-gray-600">QR_SCAN</td>
+                <td class="px-4 py-3"><span class="badge-allowed px-2 py-0.5 rounded-full font-bold">ALLOWED</span></td>
+                <td class="px-5 py-3 text-gray-400">None</td>
+              </tr>
+              <tr data-result="ALLOWED" class="hover:bg-gray-50/80">
+                <td class="px-5 py-3 font-mono text-gray-600 whitespace-nowrap">08:10:51 AM</td>
+                <td class="px-4 py-3 font-mono font-bold text-[#121824] whitespace-nowrap">UNIPASS-VIS-000001</td>
+                <td class="px-4 py-3"><span class="bg-gray-100 text-gray-700 px-2 py-0.5 rounded font-semibold text-[11px]">VISITOR</span></td>
+                <td class="px-4 py-3 font-mono text-gray-700 whitespace-nowrap">DEV-N-G1-01</td>
+                <td class="px-4 py-3 font-mono">IN</td>
+                <td class="px-4 py-3 font-mono text-gray-600">MANUAL_CODE</td>
+                <td class="px-4 py-3"><span class="badge-allowed px-2 py-0.5 rounded-full font-bold">ALLOWED</span></td>
+                <td class="px-5 py-3 text-gray-700">Guard checked face against photo</td>
+              </tr>
+              <tr data-result="DENIED" class="bg-red-50/30 hover:bg-red-50/60">
+                <td class="px-5 py-3 font-mono text-gray-600 whitespace-nowrap">08:09:33 AM</td>
+                <td class="px-4 py-3 font-mono font-bold text-[#121824] whitespace-nowrap">UNIPASS-2026-99999</td>
+                <td class="px-4 py-3"><span class="bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-semibold text-[11px]">STUDENT</span></td>
+                <td class="px-4 py-3 font-mono text-gray-700 whitespace-nowrap">DEV-S-G1-01</td>
+                <td class="px-4 py-3 font-mono">IN</td>
+                <td class="px-4 py-3 font-mono text-gray-600">QR_SCAN</td>
+                <td class="px-4 py-3"><span class="badge-denied px-2 py-0.5 rounded-full font-bold">DENIED</span></td>
+                <td class="px-5 py-3 text-red-700">Card suspended</td>
+              </tr>
+              <tr data-result="ALLOWED" class="hover:bg-gray-50/80">
+                <td class="px-5 py-3 font-mono text-gray-600 whitespace-nowrap">07:58:20 AM</td>
+                <td class="px-4 py-3 font-mono font-bold text-[#121824] whitespace-nowrap">UNIPASS-2026-30417</td>
+                <td class="px-4 py-3"><span class="bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-semibold text-[11px]">STUDENT</span></td>
+                <td class="px-4 py-3 font-mono text-gray-700 whitespace-nowrap">DEV-N-G2-01</td>
+                <td class="px-4 py-3 font-mono">PASS</td>
+                <td class="px-4 py-3 font-mono text-gray-600">QR_SCAN</td>
+                <td class="px-4 py-3"><span class="badge-allowed px-2 py-0.5 rounded-full font-bold">ALLOWED</span></td>
+                <td class="px-5 py-3 text-gray-400">None</td>
+              </tr>
+              <tr data-result="ALLOWED" class="bg-amber-50/30 hover:bg-amber-50/60">
+                <td class="px-5 py-3 font-mono text-gray-600 whitespace-nowrap">07:44:12 AM</td>
+                <td class="px-4 py-3 font-mono font-bold text-[#121824] whitespace-nowrap">UNIPASS-2026-89412</td>
+                <td class="px-4 py-3"><span class="bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-semibold text-[11px]">STUDENT</span></td>
+                <td class="px-4 py-3 font-mono text-gray-700 whitespace-nowrap">DEV-N-G1-01</td>
+                <td class="px-4 py-3 font-mono">IN</td>
+                <td class="px-4 py-3 font-mono text-gray-600">QR_SCAN</td>
+                <td class="px-4 py-3"><span class="badge-allowed px-2 py-0.5 rounded-full font-bold">ALLOWED</span></td>
+                <td class="px-5 py-3 text-amber-800">Passback hint: second IN within 90 seconds</td>
+              </tr>
+              <tr data-result="ALLOWED" class="hover:bg-gray-50/80">
+                <td class="px-5 py-3 font-mono text-gray-600 whitespace-nowrap">07:42:50 AM</td>
+                <td class="px-4 py-3 font-mono font-bold text-[#121824] whitespace-nowrap">UNIPASS-2026-89412</td>
+                <td class="px-4 py-3"><span class="bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-semibold text-[11px]">STUDENT</span></td>
+                <td class="px-4 py-3 font-mono text-gray-700 whitespace-nowrap">DEV-N-G1-01</td>
+                <td class="px-4 py-3 font-mono">IN</td>
+                <td class="px-4 py-3 font-mono text-gray-600">QR_SCAN</td>
+                <td class="px-4 py-3"><span class="badge-allowed px-2 py-0.5 rounded-full font-bold">ALLOWED</span></td>
+                <td class="px-5 py-3 text-gray-400">None</td>
+              </tr>
+              <tr data-result="DENIED" class="bg-red-50/30 hover:bg-red-50/60">
+                <td class="px-5 py-3 font-mono text-gray-600 whitespace-nowrap">07:20:18 AM</td>
+                <td class="px-4 py-3 font-mono font-bold text-[#121824] whitespace-nowrap">UNIPASS-2026-61733</td>
+                <td class="px-4 py-3"><span class="bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-semibold text-[11px]">STUDENT</span></td>
+                <td class="px-4 py-3 font-mono text-gray-700 whitespace-nowrap">DEV-N-G2-01</td>
+                <td class="px-4 py-3 font-mono">IN</td>
+                <td class="px-4 py-3 font-mono text-gray-600">QR_SCAN</td>
+                <td class="px-4 py-3"><span class="badge-denied px-2 py-0.5 rounded-full font-bold">DENIED</span></td>
+                <td class="px-5 py-3 text-red-700">Card not valid for this campus</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-[11px] text-gray-400">Sample data only. Student details stay private; only the decision and the reason are logged on this screen.</p>
+      </section>
+
+      <!-- ================= TAB: VIOLATIONS ================= -->
+      <section id="tab-violations" class="hidden space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <div class="text-[11px] font-bold uppercase tracking-wider text-[#8b6a00] flex items-center gap-2">
+              <span class="w-4 h-0.5 bg-[#F5B800]"></span>
+              Denied Entry Follow-up
+            </div>
+            <h2 class="text-2xl font-display font-extrabold text-[#121824] mt-1">Violations</h2>
+            <p class="text-xs text-gray-500">Denied scans that need a person to follow up. Guards refer the case to the Office of Student Affairs (OSA); details of the case are never shown at the gate.</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-[#e3e7eb] overflow-x-auto shadow-2xs">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-[#F4F6F8] text-gray-500 font-semibold border-b border-gray-200">
+              <tr>
+                <th class="px-5 py-3">Violation</th>
+                <th class="px-4 py-3">UniPass Code</th>
+                <th class="px-4 py-3">Device & Direction</th>
+                <th class="px-4 py-3">Time</th>
+                <th class="px-4 py-3">What Happened</th>
+                <th class="px-4 py-3">Status</th>
+                <th class="px-5 py-3 text-right">Action</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100 font-medium">
+              <tr id="violation-row-1" class="hover:bg-red-50/40">
+                <td class="px-5 py-3"><span class="badge-denied px-2 py-0.5 rounded-full font-bold whitespace-nowrap">SUSPENDED_CARD</span></td>
+                <td class="px-4 py-3 font-mono font-bold text-[#121824] whitespace-nowrap">UNIPASS-2026-99999</td>
+                <td class="px-4 py-3 font-mono text-gray-700 whitespace-nowrap">DEV-S-G1-01 (IN)</td>
+                <td class="px-4 py-3 font-mono text-gray-600 whitespace-nowrap">Today 08:09:33 AM</td>
+                <td class="px-4 py-3 text-gray-700">Suspended card scanned at the entrance. Entry denied.</td>
+                <td class="px-4 py-3 violation-status"><span class="badge-pending px-2 py-0.5 rounded-full font-bold">OPEN</span></td>
+                <td class="px-5 py-3 text-right violation-action"><button type="button" onclick="referViolation(1)" class="btn-up-gold px-2.5 py-1 rounded text-xs font-bold whitespace-nowrap">Refer to OSA</button></td>
+              </tr>
+              <tr id="violation-row-2" class="hover:bg-red-50/40">
+                <td class="px-5 py-3"><span class="badge-denied px-2 py-0.5 rounded-full font-bold whitespace-nowrap">WRONG_CAMPUS</span></td>
+                <td class="px-4 py-3 font-mono font-bold text-[#121824] whitespace-nowrap">UNIPASS-2026-61733</td>
+                <td class="px-4 py-3 font-mono text-gray-700 whitespace-nowrap">DEV-N-G2-01 (IN)</td>
+                <td class="px-4 py-3 font-mono text-gray-600 whitespace-nowrap">Today 07:20:18 AM</td>
+                <td class="px-4 py-3 text-gray-700">Card issued for the South campus scanned at a North campus gate. Entry denied.</td>
+                <td class="px-4 py-3 violation-status"><span class="badge-pending px-2 py-0.5 rounded-full font-bold">OPEN</span></td>
+                <td class="px-5 py-3 text-right violation-action"><button type="button" onclick="referViolation(2)" class="btn-up-gold px-2.5 py-1 rounded text-xs font-bold whitespace-nowrap">Refer to OSA</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-[11px] text-gray-400">Sample data only. Violations come from denied scans and never trigger an automatic penalty.</p>
+      </section>
+
     </div>
   </main>
 
@@ -1031,16 +1198,16 @@
       <div id="toast-body" class="text-xs text-gray-300 mt-0.5">Operation executed successfully.</div>
     </div>
   </div>
-
-  <script>
-    // State management
+</div>
+<script>
+// State management
     let activeDirection = 'IN';
     let currentCampus = 'ALL';
     let isStaleSimulated = false;
 
     // Tab Switching
     function switchTab(tabId) {
-      const tabs = ['overview', 'scan', 'devices', 'people', 'passes', 'reviews', 'registrar'];
+      const tabs = ['overview', 'scan', 'devices', 'people', 'passes', 'activity', 'violations', 'reviews', 'registrar'];
       tabs.forEach(t => {
         const section = document.getElementById('tab-' + t);
         const navBtn = document.getElementById('nav-' + t);
@@ -1084,17 +1251,17 @@
         statusLabel.textContent = 'All campuses active';
         headcountLabel.textContent = '1,482';
         scansLabel.textContent = '3,240';
-        showToast('Campus Filter Changed', 'Showing combined data for T.I.P. Quezon City & Manila');
+        showToast('Campus Filter Changed', 'Showing combined data for Demo University North & South');
       } else if (val === 'QC') {
-        statusLabel.textContent = 'T.I.P. Quezon City active';
+        statusLabel.textContent = 'Demo University North active';
         headcountLabel.textContent = '914';
         scansLabel.textContent = '2,010';
-        showToast('Campus Filter Changed', 'Filtered to T.I.P. Quezon City Campus');
+        showToast('Campus Filter Changed', 'Filtered to Demo University North Campus');
       } else if (val === 'MNL') {
-        statusLabel.textContent = 'T.I.P. Manila active';
+        statusLabel.textContent = 'Demo University South active';
         headcountLabel.textContent = '568';
         scansLabel.textContent = '1,230';
-        showToast('Campus Filter Changed', 'Filtered to T.I.P. Manila Campus');
+        showToast('Campus Filter Changed', 'Filtered to Demo University South Campus');
       }
     }
 
@@ -1156,7 +1323,7 @@
         details.classList.remove('hidden');
         document.getElementById('cardholder-category').textContent = 'STUDENT';
         document.getElementById('cardholder-code').textContent = cred;
-        document.getElementById('cardholder-campus').textContent = 'T.I.P. Manila';
+        document.getElementById('cardholder-campus').textContent = 'Demo University South';
         document.getElementById('cardholder-dir').textContent = `${activeDirection} @ Gate 1 (Manual Check)`;
         showToast('Gate Scan Rejected', 'Access Denied: Suspended Student Credential');
       } else {
@@ -1172,7 +1339,7 @@
         details.classList.remove('hidden');
         document.getElementById('cardholder-category').textContent = cred.includes('VIS') ? 'VISITOR' : cred.includes('21045') ? 'FACULTY' : 'STUDENT';
         document.getElementById('cardholder-code').textContent = cred;
-        document.getElementById('cardholder-campus').textContent = 'T.I.P. Quezon City';
+        document.getElementById('cardholder-campus').textContent = 'Demo University North';
         document.getElementById('cardholder-dir').textContent = `${activeDirection} @ Gate 1`;
         showToast('Gate Scan Recorded', `Turnstile unlocked for ${cred} (${activeDirection})`);
       }
@@ -1243,6 +1410,32 @@
       deselectAllPeople();
     }
 
+    // Scan activity filter
+    function filterScans(kind) {
+      document.querySelectorAll('#scan-activity-body tr').forEach(row => {
+        row.classList.toggle('hidden', kind !== 'ALL' && row.dataset.result !== kind);
+      });
+      ['ALL', 'ALLOWED', 'DENIED'].forEach(k => {
+        const btn = document.getElementById('scan-filter-' + k);
+        btn.className = k === kind
+          ? 'px-3 py-1.5 text-xs font-bold rounded-lg bg-[#121824] text-white'
+          : 'px-3 py-1.5 text-xs font-bold rounded-lg text-gray-600 hover:text-gray-900';
+      });
+    }
+
+    // Violations: refer to OSA
+    function referViolation(n) {
+      const row = document.getElementById('violation-row-' + n);
+      if (!row || row.dataset.referred) return;
+      row.dataset.referred = '1';
+      row.querySelector('.violation-status').innerHTML = '<span class="badge-neutral px-2 py-0.5 rounded-full font-bold">REFERRED</span>';
+      row.querySelector('.violation-action').innerHTML = '<span class="text-xs text-gray-400">Sent to OSA</span>';
+      const badge = document.getElementById('badge-violation-count');
+      const left = document.querySelectorAll('#tab-violations tr[id^="violation-row-"]:not([data-referred])').length;
+      badge.textContent = left;
+      showToast('Referred to OSA', 'The case was sent to the Office of Student Affairs and logged in the audit trail.');
+    }
+
     function openReviewModal(card, flag) {
       showToast('Scan Review Logged', `Flag ${flag} for ${card} marked as REVIEWED. Note added to audit log.`);
     }
@@ -1265,5 +1458,5 @@
       }, 4000);
     }
   </script>
-</body>
-</html>
+
+</body></html>
